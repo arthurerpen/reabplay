@@ -114,6 +114,19 @@
       color: #333;
       align-self: flex-start;
     }
+
+    .collection-header {
+      border-radius: 10px;
+    }
+
+    .collection-item {
+      border-radius: 10px;
+    }
+
+    .collection {
+      border: 0px;
+    }
+
   </style>
 </head>
 
@@ -126,7 +139,7 @@
       <a href="#" class="brand-logo center">Reab Play</a>
       <!-- Adicione os ícones de Mensagens e Notificações à direita -->
       <ul id="nav-mobile" class="right">
-        <li><a href="mensagens.html"><i class="material-icons">message</i></a></li>
+        <li><a href="#"><i class="material-icons">message</i></a></li>
         <li><a href="#"><i class="material-icons">notifications</i></a></li>
       </ul>
     </div>
@@ -169,50 +182,57 @@
 
   <!-- Content -->
   <main>
-    <div class="container">
-      <div class="row" id="card-container">
-        <!-- Cards -->
-        <div class="col s12 m6">
-          <div class="card card-panel">
-            <div class="card-content">
-              <span class="card-title"><h4>Agenda</h4></span>
-              <p><h6>Próximo atendimento: 16h</h6></p>
-              <p>Você atendeu 3 de 5 pacientes agendados para hoje.</p>
-              
-            </div>
+    
+    <div id="mensagens" class="col s12 blue">
+      <div class="row">
+        <div class="col s4 conversation-list">
+          <div class="collection with-header">
+            <div class="collection-header"><h5>Contatos</h5></div>
+            <a href="#!" class="collection-item">
+              <div class="contact-card">
+              <!--  <img src="vitor.jpg" alt="Foto de Vitor" class="contact-image">-->
+                <div class="contact-details">
+                  <span class="contact-name">Vitor</span>
+                  <span class="contact-status">Online</span>
+                </div>
+              </div>
+            </a>
+            <a href="#!" class="collection-item">
+              <div class="contact-card">
+             <!--   <img src="ana.jpg" alt="Foto de Ana" class="contact-image">-->
+                <div class="contact-details">
+                  <span class="contact-name">Ana</span>
+                  <span class="contact-status">Offline</span>
+                </div>
+              </div>
+            </a>
+            <a href="#!" class="collection-item">
+              <div class="contact-card">
+                <!--<img src="joao.jpg" alt="Foto de João" class="contact-image">-->
+                <div class="contact-details">
+                  <span class="contact-name">João</span>
+                  <span class="contact-status">Online</span>
+                </div>
+              </div>
+            </a>
+            <!-- Adicione mais itens de contato aqui -->
           </div>
         </div>
-  
-        <div class="col s12 m6">
-          <div class="card card-panel">
-            <div class="card-content">
-              <span class="card-title"><h4>Mensagens</h4></span>
-              <p><h6>3 mensagens não lidas.</h6></p>
-              <p>Vitor está aguardando sua resposta há 18 horas.</p>
-            </div>
+        <div class="col s8 chat-content">
+          <div class="message message-received">
+            <div class="message-sender">Vitor</div>
+            <div class="message-text">Amanhã nossa sessão está confirmada?</div>
           </div>
-        </div>
-  
-        <div class="col s12 m6">
-          <div class="card card-panel">
-            <div class="card-content">
-              <span class="card-title"><h4>Notificações</h4></span>
-              <p><h6>8 notificações não abertas</h6></p>
-              <p>Suas notificações não foram vistas hoje.</p>
-            </div>
+          <div class="message message-sent">
+            <div class="message-sender">Você</div>
+            <div class="message-text">Sim, às 15h</div>
           </div>
-        </div>
-  
-        <div class="col s12 m6">
-          <div class="card card-panel">
-            <div class="card-content">
-              <span class="card-title"><h4>Barra de Progresso</h4></span>
-              <p><h6>80% concluído</h6></p>
-              <p>*Aqui ficará um gráfico estilo Gauge*</p>
-            </div>
-          </div>
+          <!-- Adicione mais mensagens aqui -->
         </div>
       </div>
+    </div>
+
+
   </main>
 
   <!-- Import Materialize JavaScript -->
@@ -239,23 +259,8 @@
     });
 
     function updateCardHeights() {
-    var cards = document.querySelectorAll('#card-container .card');
-    var maxHeight = 0;
-
-    // Encontrar a altura máxima entre os cards
-    for (var i = 0; i < cards.length; i++) {
-      cards[i].style.height = 'auto'; // Limpar altura definida anteriormente
-      var cardHeight = cards[i].clientHeight;
-      if (cardHeight > maxHeight) {
-        maxHeight = cardHeight;
-      }
+      // ... (seu código existente para atualizar alturas dos cards) ...
     }
-
-    // Aplicar a altura máxima a todos os cards
-    for (var i = 0; i < cards.length; i++) {
-      cards[i].style.height = maxHeight + 'px';
-    }
-  }
 
     document.addEventListener('DOMContentLoaded', updateCardHeights);
     window.addEventListener('resize', updateCardHeights);

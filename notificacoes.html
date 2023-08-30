@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reab Play</title>
+  <!-- Import Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Import Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="navigation.js" type="text/javascript" defer></script>
+
+</head>
+
+<body>
+  <header-component></header-component>
+  <!-- Content -->
+  <main>
+    <div id="notificacoes">
+      <div class="row">
+        <div class="col s12 notifications-list">
+          <ul class="collection with-header">
+            <li class="collection-header"><h5>Notificações</h5></li>
+            <li class="collection-item avatar">
+              <i class="material-icons circle">folder</i>
+              <span class="title">Novas Mídias Adicionadas</span>
+              <p>O upload de arquivos de mídia foi bem sucedido.
+              <br>Há 1 hora
+              </p>
+              <a href="#!" class="secondary-content"><i class="material-icons">close</i></a>
+            </li>
+            <li class="collection-item avatar">
+              <i class="material-icons circle green">insert_chart</i>
+              <span class="title">Desepemenho da Semana</span>
+              <p>O desemepenho dos seus pacientes está ótimo, 90% das atividades foram concluídas.
+              <br>Há 2 horas
+              </p>
+              <a href="#!" class="secondary-content"><i class="material-icons">close</i></a>
+            </li>
+            <li class="collection-item avatar">
+              <i class="material-icons circle red">play_arrow</i>
+              <span class="title">Solicitação de Vídeo</span>
+              <p>Um de seus pacientes está com dúvidas sobre a realização de um exercício, um vídeo foi solicitado.
+              <br>Há 1 dia
+              </p>
+              <a href="#!" class="secondary-content"><i class="material-icons">close</i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+
+  <!-- Import Materialize JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var sidenav = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(sidenav);
+
+      var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems);
+
+      var screenWidth = window.innerWidth;
+      if (screenWidth >= 992) {
+        var instance = M.Sidenav.getInstance(sidenav[0]);
+        instance.open();
+      }
+
+    });
+  </script>
+</body>
+
+</html>

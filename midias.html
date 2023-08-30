@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Page with Materialize</title>
+  <!-- Import Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Import Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    .card,
+    .card-panel {
+      border-radius: 10px;
+      /* Adicione outros estilos CSS aqui */
+    }
+
+    nav,
+    main,
+    footer {
+      padding-left: 300px;
+    }
+
+    @media only screen and (max-width: 992px) {
+      nav,
+      main,
+      footer {
+        padding-left: 0;
+      }
+    }
+
+    .bg-image {
+      filter: blur(1px);
+      -webkit-filter: blur(1px);
+    }
+
+    .tabs-transparent {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Estilos para os cards de contatos */
+    .contact-card {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      transition: background-color 0.2s;
+    }
+
+    .contact-card:hover {
+      background-color: #f0f0f0;
+    }
+
+    .contact-image {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-name {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .contact-status {
+      color: #777;
+    }
+
+    /* Estilos para as mensagens */
+    .chat-content {
+      padding: 20px;
+      border-top: 1px solid;
+      height: 100vh;
+      overflow-y: auto;
+      background-color: rgb(137, 208, 255);
+    }
+
+    .message {
+      background-color: white;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .message-sender {
+      font-weight: bold;
+      margin-bottom: 5px;
+      padding: 10px;
+    }
+
+    .message-text {
+      color: black;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .message-received {
+      color: #333;
+      align-self: flex-start;
+    }
+
+    .message-sent {
+      text-align: right;
+      color: #333;
+      align-self: flex-start;
+    }
+
+    .collection-header {
+      border-radius: 10px;
+    }
+
+    .collection-item {
+      border-radius: 10px;
+    }
+
+    .collection {
+      border: 0px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="nav-extended blue">
+    <div class="nav-wrapper">
+      <a href="#" data-target="mobile-nav" class="sidenav-trigger hide-on-large-only"><i
+          class="material-icons">menu</i></a>
+      <a href="#" class="brand-logo center">Reab Play</a>
+      <!-- Adicione os ícones de Mensagens e Notificações à direita -->
+      <ul id="nav-mobile" class="right">
+        <li><a href="#"><i class="material-icons">message</i></a></li>
+        <li><a href="#"><i class="material-icons">notifications</i></a></li>
+      </ul>
+    </div>
+    
+  </nav>
+
+  <!-- Sidenav (Mobile) -->
+  <ul class="sidenav sidenav-fixed" id="mobile-nav">
+    <li>
+      <div class="user-view">
+        <div class="background bg-image">
+          <img src="fisio2.jpg">
+        </div>
+        <a href="#user"><img class="circle" src="rosto2.jpg"></a>
+        <div>
+          <a href="#name"><span class="white-text name">Dr. Pedro</span></a>
+          <a href="#email"><span class="white-text email">pedro.fisio@gmail.com</span></a>
+        </div>
+      </div>
+    </li>
+    <li><a href="#">Agenda</a></li>
+    <li><a href="#">Pacientes</a></li>
+
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header">Cadastro<i class="material-icons">arrow_drop_down</i></a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a href="#!">Tarefas</a></li>
+              <li><a href="#!">Vídeo</a></li>
+              <li><a href="#!">Protocolos</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+
+  <!-- Content -->
+  <main>
+
+      <div class="row">
+        <div class="col s6">Segunda-Feira</div>
+        <div class="col s6">Terça-Feira</div>
+        <div class="col s6">Quarta-Feira</div>
+        <div class="col s6">Quinta-Feira</div>
+        <div class="col s6">Sexta-Feira</div>
+        <div class="col s6">Sábado</div>
+        <div class="col s6">Domingo</div>
+      </div>
+
+
+  </main>
+
+  <!-- Import Materialize JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var sidenav = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(sidenav);
+
+      var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems);
+
+      var tabs = document.querySelectorAll('.tabs');
+      M.Tabs.init(tabs);
+
+      var screenWidth = window.innerWidth;
+      if (screenWidth >= 992) {
+        var instance = M.Sidenav.getInstance(sidenav[0]);
+        instance.open();
+      }
+
+      var userInfo = document.getElementById('user-info');
+      userInfo.innerText = 'Usuário: Dr. Pedro'; // Altere para o nome real do usuário logado
+    });
+
+    function updateCardHeights() {
+      // ... (seu código existente para atualizar alturas dos cards) ...
+    }
+
+    document.addEventListener('DOMContentLoaded', updateCardHeights);
+    window.addEventListener('resize', updateCardHeights);
+  </script>
+</body>
+
+</html>

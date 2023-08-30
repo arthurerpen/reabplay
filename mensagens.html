@@ -4,233 +4,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mobile Page with Materialize</title>
+  <title>Reab Play</title>
   <!-- Import Materialize CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- Import Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <style>
-    .card,
-    .card-panel {
-      border-radius: 10px;
-      /* Adicione outros estilos CSS aqui */
-    }
+  <link rel="stylesheet" href="styles.css">
 
-    nav,
-    main,
-    footer {
-      padding-left: 300px;
-    }
+  <script src="navigation.js" type="text/javascript" defer></script>
 
-    @media only screen and (max-width: 992px) {
-      nav,
-      main,
-      footer {
-        padding-left: 0;
-      }
-    }
-
-    .bg-image {
-      filter: blur(1px);
-      -webkit-filter: blur(1px);
-    }
-
-    .tabs-transparent {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Estilos para os cards de contatos */
-    .contact-card {
-      display: flex;
-      align-items: center;
-      padding: 10px 20px;
-      transition: background-color 0.2s;
-    }
-
-    .contact-card:hover {
-      background-color: #f0f0f0;
-    }
-
-    .contact-image {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      margin-right: 10px;
-    }
-
-    .contact-details {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contact-name {
-      font-weight: bold;
-      color: #333;
-      margin-bottom: 5px;
-    }
-
-    .contact-status {
-      color: #777;
-    }
-
-    /* Estilos para as mensagens */
-    .chat-content {
-      padding: 20px;
-      border-top: 1px solid;
-      height: 100vh;
-      overflow-y: auto;
-      background-color: rgb(137, 208, 255);
-    }
-
-    .message {
-      background-color: white;
-      border-radius: 10px;
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-
-    .message-sender {
-      font-weight: bold;
-      margin-bottom: 5px;
-      padding: 10px;
-    }
-
-    .message-text {
-      color: black;
-      padding: 10px;
-      border-radius: 8px;
-    }
-
-    .message-received {
-      color: #333;
-      align-self: flex-start;
-    }
-
-    .message-sent {
-      text-align: right;
-      color: #333;
-      align-self: flex-start;
-    }
-
-    .collection-header {
-      border-radius: 10px;
-    }
-
-    .collection-item {
-      border-radius: 10px;
-    }
-
-    .collection {
-      border: 0px;
-    }
-
-  </style>
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="nav-extended blue">
-    <div class="nav-wrapper">
-      <a href="#" data-target="mobile-nav" class="sidenav-trigger hide-on-large-only"><i
-          class="material-icons">menu</i></a>
-      <a href="#" class="brand-logo center">Reab Play</a>
-      <!-- Adicione os ícones de Mensagens e Notificações à direita -->
-      <ul id="nav-mobile" class="right">
-        <li><a href="#"><i class="material-icons">message</i></a></li>
-        <li><a href="#"><i class="material-icons">notifications</i></a></li>
-      </ul>
-    </div>
-    
-  </nav>
-
-  <!-- Sidenav (Mobile) -->
-  <ul class="sidenav sidenav-fixed" id="mobile-nav">
-    <li>
-      <div class="user-view">
-        <div class="background bg-image">
-          <img src="fisio2.jpg">
-        </div>
-        <a href="#user"><img class="circle" src="rosto2.jpg"></a>
-        <div>
-          <a href="#name"><span class="white-text name">Dr. Pedro</span></a>
-          <a href="#email"><span class="white-text email">pedro.fisio@gmail.com</span></a>
-        </div>
-      </div>
-    </li>
-    <li><a href="#">Agenda</a></li>
-    <li><a href="#">Pacientes</a></li>
-
-    <li class="no-padding">
-      <ul class="collapsible collapsible-accordion">
-        <li>
-          <a class="collapsible-header">Cadastro<i class="material-icons">arrow_drop_down</i></a>
-          <div class="collapsible-body">
-            <ul>
-              <li><a href="#!">Tarefas</a></li>
-              <li><a href="#!">Vídeo</a></li>
-              <li><a href="#!">Protocolos</a></li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </li>
-
-  </ul>
-
+  <header-component></header-component>
   <!-- Content -->
   <main>
     
-    <div id="mensagens" class="col s12 blue">
+   <div id="mensagens">
       <div class="row">
-        <div class="col s4 conversation-list">
-          <div class="collection with-header">
-            <div class="collection-header"><h5>Contatos</h5></div>
-            <a href="#!" class="collection-item">
-              <div class="contact-card">
-              <!--  <img src="vitor.jpg" alt="Foto de Vitor" class="contact-image">-->
-                <div class="contact-details">
-                  <span class="contact-name">Vitor</span>
-                  <span class="contact-status">Online</span>
-                </div>
-              </div>
-            </a>
-            <a href="#!" class="collection-item">
-              <div class="contact-card">
-             <!--   <img src="ana.jpg" alt="Foto de Ana" class="contact-image">-->
-                <div class="contact-details">
-                  <span class="contact-name">Ana</span>
-                  <span class="contact-status">Offline</span>
-                </div>
-              </div>
-            </a>
-            <a href="#!" class="collection-item">
-              <div class="contact-card">
-                <!--<img src="joao.jpg" alt="Foto de João" class="contact-image">-->
-                <div class="contact-details">
-                  <span class="contact-name">João</span>
-                  <span class="contact-status">Online</span>
-                </div>
-              </div>
-            </a>
-            <!-- Adicione mais itens de contato aqui -->
-          </div>
+        <div class="col s4 m4 l4 conversation-list">
+          <ul class="collection with-header" id="contacts-list">
+            <li class="collection-header"><h5>Contatos</h5></li>
+            <li class="collection-item avatar">
+              <img src="assets/rosto-contato1.jpg" alt="" class="circle">
+              <span class="title">Vitor</span>
+              <p class="hide-on-small">Sim, às 15h
+              </p>
+            </li>
+            <li class="collection-item avatar">
+              <img src="assets/rosto-contato2.jpg" alt="" class="circle">
+              <span class="title">Julio</span>
+              <p class="hide-on-small">Até mais
+              </p>
+            </li>
+            <li class="collection-item avatar">
+              <img src="assets/rosto-contato3.jpg" alt="" class="circle">
+              <span class="title">Ana</span>
+              <p class="hide-on-small">Está adequado
+              </p>
+            </li>
+          </ul>
         </div>
-        <div class="col s8 chat-content">
-          <div class="message message-received">
-            <div class="message-sender">Vitor</div>
+       <!--  <div class="card-panel col s12"><h1>Vitor</h1></div> -->
+        <div class="col s12 m8 l8 chat-content">
+          
+          <ul class="collection">
+
+
+            <!-- <div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li> -->
+
+            <li class="collection-item avatar" id="chat-header">
+              <img src="assets/rosto-contato1.jpg" alt="" class="circle responsive-img">
+              <span class="title"><h5>Vitor</h5></span>
+            </li>
+            <li class="collection-item">
+              <div class="message-sender">Vitor</div>
             <div class="message-text">Amanhã nossa sessão está confirmada?</div>
-          </div>
-          <div class="message message-sent">
-            <div class="message-sender">Você</div>
-            <div class="message-text">Sim, às 15h</div>
-          </div>
-          <!-- Adicione mais mensagens aqui -->
+            </li>
+            <li class="collection-item">
+              <div class="message-sender right-align">Você</div>
+              <div class="message-text right-align">Sim, às 15h</div>
+            </li>
+          </ul>
+
         </div>
       </div>
-    </div>
+    </div> 
 
 
   </main>
@@ -245,25 +85,13 @@
       var elems = document.querySelectorAll('.collapsible');
     var instances = M.Collapsible.init(elems);
 
-      var tabs = document.querySelectorAll('.tabs');
-      M.Tabs.init(tabs);
-
       var screenWidth = window.innerWidth;
       if (screenWidth >= 992) {
         var instance = M.Sidenav.getInstance(sidenav[0]);
         instance.open();
       }
 
-      var userInfo = document.getElementById('user-info');
-      userInfo.innerText = 'Usuário: Dr. Pedro'; // Altere para o nome real do usuário logado
     });
-
-    function updateCardHeights() {
-      // ... (seu código existente para atualizar alturas dos cards) ...
-    }
-
-    document.addEventListener('DOMContentLoaded', updateCardHeights);
-    window.addEventListener('resize', updateCardHeights);
   </script>
 </body>
 

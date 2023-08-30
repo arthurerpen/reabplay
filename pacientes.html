@@ -23,7 +23,7 @@
     <div class="container">
       <div class="row" id="card-container">
         <!-- Cards -->
-        <div class="col s12 m6">
+        <div class="col s4 m4 l4">
           <div class="card card-panel">
             <div class="card-content">
               <span class="card-title"><b>Agenda</b></span>
@@ -76,17 +76,11 @@
       var elems = document.querySelectorAll('.collapsible');
     var instances = M.Collapsible.init(elems);
 
-      var tabs = document.querySelectorAll('.tabs');
-      M.Tabs.init(tabs);
-
       var screenWidth = window.innerWidth;
       if (screenWidth >= 992) {
         var instance = M.Sidenav.getInstance(sidenav[0]);
         instance.open();
       }
-
-      var userInfo = document.getElementById('user-info');
-      userInfo.innerText = 'Usuário: Dr. Pedro'; // Altere para o nome real do usuário logado
     });
 
     function updateCardHeights() {

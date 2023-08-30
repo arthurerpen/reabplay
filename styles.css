@@ -111,3 +111,7 @@
       .collection {
         border: 0px;
       }
+
+      img {
+        object-fit: cover;
+      }

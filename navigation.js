@@ -29,9 +29,9 @@ class Header extends HTMLElement {
             <li>
             <div class="user-view">
                 <div class="background bg-image">
-                <img src="fisio2.jpg">
+                <img src="assets/espaco1.jpg">
                 </div>
-                <a href="#user"><img class="circle" src="rosto2.jpg"></a>
+                <a href="#user"><img class="circle" src="assets/rosto-profissional1.jpg"></a>
                 <div>
                 <a href="#name"><span class="white-text name">Dr. Pedro</span></a>
                 <a href="#email"><span class="white-text email">pedro.fisio@gmail.com</span></a>

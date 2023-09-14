@@ -17,8 +17,15 @@ class Header extends HTMLElement {
             <a href="index.html" class="brand-logo center">Reab Play</a>
             <!-- Adicione os ícones de Mensagens e Notificações à direita -->
             <ul id="nav-mobile" class="right">
-                <li><a href="mensagens.html"><i class="material-icons">message</i></a></li>
-                 <li><a href="notificacoes.html"><i class="material-icons">notifications</i></a></li>
+                <li><a href="mensagens.html" class="icon-class">
+                    <i class="material-icons">message</i>
+                    <span class="new badge green lighten-1" data-badge-caption="">2</span>
+                </a></li>
+                 <li><a href="notificacoes.html" class="icon-class">
+                     <i class="material-icons">notifications</i>
+                     <span class="new badge red" data-badge-caption="">3</span>
+                 
+                 </a></li>
              </ul>
             </div>
             
@@ -39,7 +46,7 @@ class Header extends HTMLElement {
             </div>
             </li>
             <li><a href="agenda.html">Agenda</a></li>
-            <li><a href="#">Pacientes</a></li>
+            <li><a href="">Progresso</a></li>
         
             <li class="no-padding">
             <ul class="collapsible collapsible-accordion">
@@ -47,6 +54,7 @@ class Header extends HTMLElement {
                 <a class="collapsible-header">Cadastro<i class="material-icons">arrow_drop_down</i></a>
                 <div class="collapsible-body">
                     <ul>
+                    <li><a href="#">Pacientes</a></li>
                     <li><a href="#!">Tarefas</a></li>
                     <li><a href="#!">Vídeo</a></li>
                     <li><a href="#!">Protocolos</a></li>

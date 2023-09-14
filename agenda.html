@@ -42,29 +42,56 @@
     });
   </script>
 
-<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
 
-<script>
+  <script>
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-    // var calendar = new FullCalendar.Calendar(calendarEl, {
-    //   initialView: 'dayGridWeek'
-    // });
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+      // var calendar = new FullCalendar.Calendar(calendarEl, {
+      //   initialView: 'dayGridWeek'
+      // });
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-  //plugins: [dayGridPlugin],
-  initialView: 'dayGridWeek',
-  headerToolbar: {
-    left: 'prev,next',
-    center: 'title',
-    right: 'dayGridWeek,dayGridDay' // user can switch between the two
-  }
-})
-    calendar.render();
-  });
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+   // plugins: [ interactionPlugin ],
+    initialView: 'dayGridWeek',
+    locale: 'pt-br',
+    headerToolbar: {
+      left: 'prev,next',
+      center: 'title',
+      right: 'dayGridMonth,dayGridWeek,dayGridDay' // user can switch between the two
+    },
+    events: [
+    {
+      id: '1',
+      title: 'Vitor',
+      daysOfWeek: [ '2','4'  ],
+      startTime: '10:00:00',
+      endTime: '12:00:00',
+      url: 'paciente.html'
+    },
+    {
+      id: '2',
+      title: 'Julio',
+      daysOfWeek: [ '2','4'  ],
+      startTime: '14:00:00',
+      endTime: '16:00:00'
+    },
+    {
+      id: '3',
+      title: 'Ana',
+      daysOfWeek: [ '2','4'  ],
+      startTime: '16:00:00',
+      endTime: '18:00:00'
+    }
 
-</script>
+  ],
+  editable: true
+  })
+      calendar.render();
+    });
+
+  </script>
 
 
 </body>

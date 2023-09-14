@@ -11,9 +11,15 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
-  
+
   <script src="navigation.js" type="text/javascript" defer></script>
-  
+
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.js"></script>
+
+
 </head>
 
 <body>
@@ -24,44 +30,89 @@
       <div class="row" id="card-container">
         <!-- Cards -->
         <div class="col s12 m6">
-          <div class="card card-panel">
-            <div class="card-content">
-              <span class="card-title"><b>Agenda</b></span>
-              <p><h6>Próximo atendimento: 16h</h6></p>
-              <p>Você atendeu 3 de 5 pacientes agendados para hoje.</p>
-              
+          <a href="agenda.html" class="card-link">
+            <div class="card hoverable">
+              <div class="card-content">
+
+                <div class="row">
+                  <i class="medium material-icons left">date_range</i>
+                  <span class="card-title"><b>Agenda</b></span>
+
+                </div>
+
+
+
+
+                <p>
+                <h6>Próximo atendimento: 16h</h6>
+                </p>
+                <p>Você atendeu 3 de 5 pacientes agendados para hoje.</p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
-  
+
         <div class="col s12 m6">
-          <div class="card card-panel">
-            <div class="card-content">
-              <span class="card-title"><b>Mensagens</b></span>
-              <p><h6>3 mensagens não lidas.</h6></p>
-              <p>Vitor está aguardando sua resposta há 18 horas.</p>
+          <a href="mensagens.html" class="card-link">
+            <div class="card hoverable">
+              <div class="card-content">
+
+                <div class="row">
+                  <i class="medium material-icons left">message</i>
+                  <span class="card-title"><b>Conversas</b></span>
+
+                </div>
+
+
+                <p>
+                <h6>3 mensagens não lidas.</h6>
+                </p>
+                <p>Vitor está aguardando sua resposta há 18 horas.</p>
+              </div>
             </div>
-          </div>
+          </a>
+
         </div>
-  
+
         <div class="col s12 m6">
-          <div class="card card-panel">
-            <div class="card-content">
-              <span class="card-title"><b>Notificações</b></span>
-              <p><h6>8 notificações não abertas</h6></p>
-              <p>Suas notificações não foram vistas hoje.</p>
+          <a href="notificacoes.html" class="card-link">
+            <div class="card hoverable">
+              <div class="card-content">
+                <div class="row">
+                  <i class="medium material-icons left">notifications</i>
+                  <span class="card-title"><b>Notificações</b></span>
+
+                </div>
+
+                <p>
+                <h6>8 notificações não abertas</h6>
+                </p>
+                <p>Suas notificações não foram vistas hoje.</p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
-  
+
         <div class="col s12 m6">
-          <div class="card card-panel">
-            <div class="card-content">
-              <span class="card-title"><b>Barra de Progresso</b></span>
-              <p><h6>80% concluído</h6></p>
-              <p>*Aqui ficará um gráfico estilo Gauge*</p>
+          <a href="index.html" class="card-link">
+            <div class="card hoverable">
+              <div class="card-content">
+
+                <div class="row">
+                  <i class="medium material-icons left">show_chart</i>
+                  <span class="card-title"><b>Progresso Geral</b></span>
+
+                </div>
+
+
+                <div id="chart"></div>
+              </div>
             </div>
-          </div>
+
+
+          </a>
+
+
         </div>
       </div>
   </main>
@@ -74,43 +125,92 @@
       M.Sidenav.init(sidenav);
 
       var elems = document.querySelectorAll('.collapsible');
-    var instances = M.Collapsible.init(elems);
-
-      var tabs = document.querySelectorAll('.tabs');
-      M.Tabs.init(tabs);
+      var instances = M.Collapsible.init(elems);
 
       var screenWidth = window.innerWidth;
       if (screenWidth >= 992) {
         var instance = M.Sidenav.getInstance(sidenav[0]);
         instance.open();
       }
-
-      var userInfo = document.getElementById('user-info');
-      userInfo.innerText = 'Usuário: Dr. Pedro'; // Altere para o nome real do usuário logado
     });
 
     function updateCardHeights() {
-    var cards = document.querySelectorAll('#card-container .card');
-    var maxHeight = 0;
+      var cards = document.querySelectorAll('#card-container .card');
+      var maxHeight = 0;
 
-    // Encontrar a altura máxima entre os cards
-    for (var i = 0; i < cards.length; i++) {
-      cards[i].style.height = 'auto'; // Limpar altura definida anteriormente
-      var cardHeight = cards[i].clientHeight;
-      if (cardHeight > maxHeight) {
-        maxHeight = cardHeight;
+      // Encontrar a altura máxima entre os cards
+      for (var i = 0; i < cards.length; i++) {
+        cards[i].style.height = 'auto'; // Limpar altura definida anteriormente
+        var cardHeight = cards[i].clientHeight;
+        if (cardHeight > maxHeight) {
+          maxHeight = cardHeight;
+        }
+      }
+
+      // Aplicar a altura máxima a todos os cards
+      for (var i = 0; i < cards.length; i++) {
+        cards[i].style.height = maxHeight + 'px';
       }
     }
-
-    // Aplicar a altura máxima a todos os cards
-    for (var i = 0; i < cards.length; i++) {
-      cards[i].style.height = maxHeight + 'px';
-    }
-  }
 
     document.addEventListener('DOMContentLoaded', updateCardHeights);
     window.addEventListener('resize', updateCardHeights);
   </script>
+
+
+  <script>
+
+    var chart = c3.generate({
+      data: {
+        columns: [
+          ['Speed', 91]
+        ],
+        type: 'gauge'
+      },
+      gauge: {
+        label: {
+          format: function (value, ratio) {
+            return value;
+          }
+        }
+      },
+      color: {
+        pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'],
+        threshold: {
+          values: [30, 60, 90, 100]
+        }
+      },
+      size: {
+        height: 120
+      }
+    });
+
+    function updateChart() {
+      var randomValue = Math.round((Math.random(100) * 100));
+      var randomMaxValue = 100 + Math.round((Math.random(100) * 100));
+
+      chart.internal.config.gauge_max = randomMaxValue;
+      //not sure if this is supported by C3JS out of the box
+      chart.internal.config.color_threshold = [
+        Math.round(randomMaxValue / 4),
+        Math.round(randomMaxValue / 3),
+        Math.round(randomMaxValue / 2),
+        randomMaxValue
+      ];
+
+      chart.load({
+        columns: [['Speed', randomValue]]
+      });
+
+    }
+
+    setInterval(updateChart, 3000);
+
+
+
+  </script>
+
+
 </body>
 
 </html>

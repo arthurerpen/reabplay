@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reab Play</title>
+  <!-- Import Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Import Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="navigation.js" type="text/javascript" defer></script>
+
+</head>
+
+<body>
+  <header-component></header-component>
+  <!-- Content -->
+  <main>
+
+    <div id="paciente">
+      <div class="row">
+        <div class="col m12 l12 s12 page-header">
+          <h5>Paciente</h5>
+        </div>
+
+
+        <div class="col s12 m6 l6">
+          <h6><b>Vitor (Vitão)</b></h6>
+          <img class="paciente" src="assets/rosto-contato1.jpg">
+
+        </div>
+
+        <div class="col s12 m6 l6">
+          <h6><b>Dados</b></h6>
+          <p><b>Nome: </b>Vitor</p>
+          <p><b>Idade: </b>26 anos</p>
+          <p><b>Sexo: </b>Homem</p>
+          <p><b>Telefone: </b>48988662237</p>
+          <p><b>Email: </b>vitor.floripa@gmail.com</p>
+          <p><b>Prioridade: </b>Baixa</p>
+        </div>
+        
+
+
+      </div>
+      <div class="row">
+        <div class="col s12 m6 l6">
+          <h6><b>Agenda</b></h6>
+          <p>Fisioterapia nas terças e quartas das 10h às 12h</p>
+
+        </div>
+
+        <div class="col s12 m6 l6">
+          <h6><b>Tratamento</b></h6>
+          <p>Paciente em tratamento pós operatório.</p>
+        </div>  
+
+      </div>
+    </div>
+
+
+  </main>
+
+  <!-- Import Materialize JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var sidenav = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(sidenav);
+
+      var elems = document.querySelectorAll('.collapsible');
+      var instances = M.Collapsible.init(elems);
+
+      var screenWidth = window.innerWidth;
+      if (screenWidth >= 992) {
+        var instance = M.Sidenav.getInstance(sidenav[0]);
+        instance.open();
+      }
+
+    });
+  </script>
+</body>
+
+</html>

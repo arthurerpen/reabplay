@@ -1,117 +1,170 @@
 @media only screen and (max-width: 601px) {
-    .home .card .card-content, .card-panel  {        
-      padding: 5px;
-    }
 
-    #contacts-list {
-      display: none;
-    }
-  }
-
-
-  .card,
+  .home .card .card-content,
   .card-panel {
-    border-radius: 10px;
-    /* Adicione outros estilos CSS aqui */
+    padding: 20px;
   }
+
+  #conversa-nas-mensagens {
+    display: none;
+  }
+}
+
+
+.card,
+.card-panel {
+  border-radius: 0px;
+  /* Adicione outros estilos CSS aqui */
+}
+
+nav,
+main,
+footer {
+  padding-left: 300px;
+}
+
+@media only screen and (max-width: 992px) {
 
   nav,
   main,
   footer {
-    padding-left: 300px;
+    padding-left: 0;
   }
+}
 
-  @media only screen and (max-width: 992px) {
-    nav,
-    main,
-    footer {
-      padding-left: 0;
-    }
-  }
+.bg-image {
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+}
 
-  .bg-image {
-    filter: blur(1px);
-    -webkit-filter: blur(1px);
-  }
+/* Estilos para as mensagens */
+.chat-content {
+  padding: 20px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  height: 80vh;
+  overflow-y: auto;
+}
 
-    /* Estilos para os cards de contatos */
-    .contact-card {
-        display: flex;
-        align-items: center;
-        padding: 10px 20px;
-        transition: background-color 0.2s;
-      }
-  
-      .contact-card:hover {
-        background-color: #f0f0f0;
-      }
-  
-      .contact-image {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        margin-right: 10px;
-      }
-  
-      .contact-details {
-        display: flex;
-        flex-direction: column;
-      }
-  
-      .contact-name {
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 5px;
-      }
-  
-      .contact-status {
-        color: #777;
-      }
-  
-      /* Estilos para as mensagens */
-      .chat-content {
-        padding: 20px;
-        border-top: 1px solid;
-        height: 100vh;
-        overflow-y: auto;
-        background-color: rgb(137, 208, 255);
-      }
-  
-      .message {
-        background-color: white;
-        border-radius: 10px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-      }
-  
-      .message-sender {
-        font-weight: bold;
-        margin-bottom: 5px;
-        padding: 10px;
-      }
-  
-      .message-text {
-        color: black;
-        padding: 10px;
-        border-radius: 8px;
-      }
-  
-      .message-received {
-        color: #333;
-        align-self: flex-start;
-      }
-  
-      .message-sent {
-        text-align: right;
-        color: #333;
-        align-self: flex-start;
-      }
+.message {
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
-  
-      .collection {
-        border: 0px;
-      }
+.message-sender {
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding: 10px;
+}
 
-      img {
-        object-fit: cover;
-      }
+.message-text {
+  color: black;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.message-received {
+  color: #333;
+  align-self: flex-start;
+}
+
+.message-sent {
+  text-align: right;
+  color: #333;
+  align-self: flex-start;
+}
+
+
+.collection {
+  border: 5px;
+}
+
+img {
+  object-fit: cover;
+}
+
+img.paciente {
+  object-fit: cover;
+  max-width: 100%;
+  max-height: auto;
+}
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: black;
+  border: 5px;
+  margin: auto;
+  padding: 5px;
+}
+
+.icon-class {
+  position: relative;
+}
+
+.icon-class span {
+  position: absolute;
+  top: 30px;
+  right: 5px;
+  display: block;
+}
+
+span.badge {
+  min-width: 0;
+}
+
+span.badge.new {
+  min-width: 0;
+  border-radius: 20px;
+}
+
+.collection-item.notificacao-alta-prioridade {
+  border-left: 0.5rem solid;
+  border-left-color: rgba(255, 0, 0, 0.35);
+}
+
+.collection-item.notificacao-media-prioridade {
+  border-left: 0.5rem solid;
+  border-left-color: rgba(255, 255, 0, 0.35);
+}
+
+.collection-item.notificacao-baixa-prioridade {
+  border-left: 0.5rem solid;
+  border-left-color: rgba(0, 255, 0, 0.35);
+}
+
+
+
+
+.collection-item.avatar:hover {
+  background-color: #f0f0f0;
+
+}
+
+#barra-escrita-mensagem {
+  margin-top: 20px;
+  width: auto;
+  
+}
+
+#chart {
+  margin-top: -30px;
+}
+
+#inputlabel {
+  width: auto;
+}
+
+.usuario-alta-prioridade {
+  border: 0.25rem solid rgba(255, 0, 0, 0.7);
+}
+
+.usuario-media-prioridade {
+  border: 0.25rem solid rgba(255, 255, 0, 0.7);
+}
+
+.usuario-baixa-prioridade {
+  border: 0.25rem solid rgba(0, 255, 0, 0.35);
+}
